@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.andreujuan.pointofservice"
+      version="0.1.0">
+    <name>Dolphin CT50</name>
+    <description>CT50 Interface for Apache Cordova</description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/pointOfService.js" name="pointOfService">
+        <clobbers target="pointOfService" />
+    </js-module>
+
+    <!-- windows -->
+    <platform name="windows">
+        <js-module src="src/windows/pointofservice.barcode.js" name="Barcode">
+            <merges target="" />
+        </js-module>
+        <framework src="src/windows/POS.UWP/POS.UWP/POS.UWP.csproj" 
+                        custom="true" 
+                        type="projectReference" 
+                        versions="10.*" />
+    </platform>
+
+</plugin>
