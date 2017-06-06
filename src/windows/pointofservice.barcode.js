@@ -11,17 +11,18 @@ var barcode = {
             debugger;
             errorCallback(error);
         };
-        Windows.Devices.PointOfService.BarcodeScanner.getDefaultAsync()
-            .then(claimScanner, handleError)
-            .then(hookEvents, handleError)
-            .then(enableScanner, handleError)
-            .then(enableSymbologies, handleError)
-            .then(
-                function (result) {
-                    successCallback(result);
-                }, handleError
-            );
-         
+        setTimeout(function () {
+            Windows.Devices.PointOfService.BarcodeScanner.getDefaultAsync()
+                .then(claimScanner, handleError)
+                .then(hookEvents, handleError)
+                .then(enableScanner, handleError)
+                .then(enableSymbologies, handleError)
+                .then(
+                    function (result) {
+                        successCallback(result);
+                    }, handleError
+                );
+        }, 1000);
     },
     addEventListener: function (successCallback, errorCallback, args) {
         var name = args[0];
