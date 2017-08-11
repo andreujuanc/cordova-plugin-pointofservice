@@ -14,7 +14,7 @@
   "deprecated": false,
   "description": "Cordova Point of service Plugin",
   "engines": {
-    "cordovaDcordova-plugin-pointofserviceependencies": {
+    "cordovaDependencies": {
       "0.0.0": {
         "cordova-android": ">=4.0.0"
       },
